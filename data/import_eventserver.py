@@ -13,29 +13,17 @@ def import_events(client, file):
     data = line.rstrip('\r\n').split(",")
     plan = data[0]
     attr = data[1].split(" ")
+
+    features = {}
+    for i in range(0, len(attr)):
+      features["attr" + str(i)] = float(attr[i])
+    features["plan"] = int(plan)
+
     client.create_event(
       event="$set",
       entity_type="user",
       entity_id=str(count), # use the count num as user ID
-      properties= {
-        "attr0" : float(attr[0]),
-        "attr1" : float(attr[1]),
-        "attr2" : float(attr[2]),
-        "attr3" : float(attr[3]),
-        "attr4" : float(attr[4]),
-        "attr5" : float(attr[5]),
-        "attr6" : float(attr[6]),
-        "attr7" : float(attr[7]),
-        "attr8" : float(attr[8]),
-        "attr9" : float(attr[9]),
-        "attr10" : float(attr[10]),
-        "attr11" : float(attr[11]),
-        "attr12" : float(attr[12]),
-        "attr13" : float(attr[13]),
-        "attr14" : float(attr[14]),
-        "attr15" : float(attr[15]),
-        "plan" : int(plan)
-      }
+      properties=features 
     )
     count += 1
   f.close()
