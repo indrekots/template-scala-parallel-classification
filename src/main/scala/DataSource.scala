@@ -43,45 +43,12 @@ class DataSource(val dsp: DataSourceParams)
       // entity ID and its aggregated properties
       .map { case (entityId, properties) =>
         try {
+          var propArray: Array[Double] = Array[Double]()
+          for (i <- 0 to properties.keySet.size - 2) {
+            propArray = propArray :+ properties.get[Double]("attr" + i)
+          }
           LabeledPoint(properties.get[Double]("plan"),
-            Vectors.dense(Array(
-              properties.get[Double]("attr0"),
-              properties.get[Double]("attr1"),
-              properties.get[Double]("attr2"),
-              properties.get[Double]("attr3"),
-              properties.get[Double]("attr4"),
-              properties.get[Double]("attr5"),
-              properties.get[Double]("attr6"),
-              properties.get[Double]("attr7"),
-              properties.get[Double]("attr8"),
-              properties.get[Double]("attr9"),
-              properties.get[Double]("attr10"),
-              properties.get[Double]("attr11"),
-              properties.get[Double]("attr12"),
-              properties.get[Double]("attr13"),
-              properties.get[Double]("attr14"),
-              properties.get[Double]("attr15"),
-              properties.get[Double]("attr16"),
-              properties.get[Double]("attr17"),
-              properties.get[Double]("attr18"),
-              properties.get[Double]("attr19"),
-              properties.get[Double]("attr20"),
-              properties.get[Double]("attr21"),
-              properties.get[Double]("attr22"),
-              properties.get[Double]("attr23"),
-              properties.get[Double]("attr24"),
-              properties.get[Double]("attr25"),
-              properties.get[Double]("attr26"),
-              properties.get[Double]("attr27"),
-              properties.get[Double]("attr28"),
-              properties.get[Double]("attr29"),
-              properties.get[Double]("attr30"),
-              properties.get[Double]("attr31"),
-              properties.get[Double]("attr32"),
-              properties.get[Double]("attr33"),
-              properties.get[Double]("attr34"),
-              properties.get[Double]("attr35")
-            ))
+            Vectors.dense(propArray)
           )
         } catch {
           case e: Exception => {
@@ -114,45 +81,12 @@ class DataSource(val dsp: DataSourceParams)
       // entity ID and its aggregated properties
       .map { case (entityId, properties) =>
         try {
+          var propArray: Array[Double] = Array[Double]()
+          for (i <- 0 to properties.keySet.size - 2) {
+            propArray = propArray :+ properties.get[Double]("attr" + i)
+          }
           LabeledPoint(properties.get[Double]("plan"),
-            Vectors.dense(Array(
-              properties.get[Double]("attr0"),
-              properties.get[Double]("attr1"),
-              properties.get[Double]("attr2"),
-              properties.get[Double]("attr3"),
-              properties.get[Double]("attr4"),
-              properties.get[Double]("attr5"),
-              properties.get[Double]("attr6"),
-              properties.get[Double]("attr7"),
-              properties.get[Double]("attr8"),
-              properties.get[Double]("attr9"),
-              properties.get[Double]("attr10"),
-              properties.get[Double]("attr11"),
-              properties.get[Double]("attr12"),
-              properties.get[Double]("attr13"),
-              properties.get[Double]("attr14"),
-              properties.get[Double]("attr15"),
-              properties.get[Double]("attr16"),
-              properties.get[Double]("attr17"),
-              properties.get[Double]("attr18"),
-              properties.get[Double]("attr19"),
-              properties.get[Double]("attr20"),
-              properties.get[Double]("attr21"),
-              properties.get[Double]("attr22"),
-              properties.get[Double]("attr23"),
-              properties.get[Double]("attr24"),
-              properties.get[Double]("attr25"),
-              properties.get[Double]("attr26"),
-              properties.get[Double]("attr27"),
-              properties.get[Double]("attr28"),
-              properties.get[Double]("attr29"),
-              properties.get[Double]("attr30"),
-              properties.get[Double]("attr31"),
-              properties.get[Double]("attr32"),
-              properties.get[Double]("attr33"),
-              properties.get[Double]("attr34"),
-              properties.get[Double]("attr35")
-            ))
+            Vectors.dense(propArray)
           )
         } catch {
           case e: Exception => {
