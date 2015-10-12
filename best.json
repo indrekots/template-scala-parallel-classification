@@ -1,0 +1,32 @@
+{
+  "id":"org.template.classification.AccuracyEvaluation$ 2015-10-09T10:40:54.964Z",
+  "description":"",
+  "engineFactory":"org.template.classification.AccuracyEvaluation$",
+  "datasource":{
+    "name":"",
+    "params":{
+      "appName":"Class1",
+      "evalK":5
+    }
+  },
+  "preparator":{
+    "name":"",
+    "params":{
+      
+    }
+  },
+  "algorithms":[
+    {
+      "name":"naive",
+      "params":{
+        "lambda":10000.0
+      }
+    }
+  ],
+  "serving":{
+    "name":"",
+    "params":{
+      
+    }
+  }
+}
