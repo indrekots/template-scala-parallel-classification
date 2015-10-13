@@ -22,15 +22,11 @@ class DataSource(val dsp: DataSourceParams)
       EmptyEvaluationInfo, Query, ActualResult] {
 
   @transient lazy val logger = Logger[this.type]
-  val requiredElements = List("plan", "attr0", "attr1", "attr2",
-                      "attr3", "attr4", "attr5", "attr6", "attr7",
-                      "attr8", "attr9", "attr10", "attr11", "attr12",
-                      "attr13", "attr14", "attr15", "attr16", "attr17",
-                      "attr18", "attr19", "attr20", "attr21", "attr22",
-                      "attr23", "attr24", "attr25", "attr26", "attr27",
-                      "attr28", "attr29", "attr30", "attr31", "attr32",
-                      "attr33", "attr34", "attr35")
-
+  val noOfAttributes = 36
+  var requiredElements = List("plan")
+  for (i <- 0 to noOfAttributes - 1) {
+    requiredElements :+ "attr" + i
+  }
   override
   def readTraining(sc: SparkContext): TrainingData = {
 
