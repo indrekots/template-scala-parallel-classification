@@ -1,11 +1,11 @@
 {
-  "id":"org.template.classification.AccuracyEvaluation$ 2015-10-09T10:40:54.964Z",
+  "id":"org.template.classification.AccuracyEvaluation$ 2015-10-29T10:06:29.949Z",
   "description":"",
   "engineFactory":"org.template.classification.AccuracyEvaluation$",
   "datasource":{
     "name":"",
     "params":{
-      "appName":"Class1",
+      "appName":"Class2",
       "evalK":5
     }
   },
@@ -17,9 +17,14 @@
   },
   "algorithms":[
     {
-      "name":"naive",
+      "name":"randomforest",
       "params":{
-        "lambda":10000.0
+        "numClasses":2,
+        "numTrees":50,
+        "featureSubsetStrategy":"auto",
+        "impurity":"gini",
+        "maxDepth":20,
+        "maxBins":100
       }
     }
   ],
